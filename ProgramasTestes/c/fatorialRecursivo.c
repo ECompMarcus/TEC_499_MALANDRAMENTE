@@ -3,11 +3,8 @@
 
 int main(int argc, char** argv) {
 
-    int num;
-    printf("Entre com um número: ");
-    scanf("%d", &num);
+    int num = 5;
     printf("O fatorial de %d é %d.", num, fatorial(num));
-
     return (EXIT_SUCCESS);
 }
 
