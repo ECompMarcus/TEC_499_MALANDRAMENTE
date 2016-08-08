@@ -17,7 +17,8 @@ loop:
 	addi $s1, $s1, -1
 	bne  $s1, $t0, loop
 Exit:
+	addi $t1,$zero,-1
+	j end
 Exit1:
 	addi $t1,$zero,1
-	sw 	$t1,0($sp)
-	addi $sp,$sp,1
+end:
