@@ -63,7 +63,7 @@ public class MEMORY {
         return internalMemorySize;
     }
 
-    public boolean writeMemory(int address, String value) {
+    public boolean writeMemory(int address, int value) {
 
         if (address >= instruNumber) {
             internalMemory[address] = value;
@@ -73,8 +73,8 @@ public class MEMORY {
         return true;
     }
 
-    public String readMemory(int address) {
+    public int readMemory(int address) {
 
-        return internalMemory[address];
+        return Integer.parseInt(internalMemory[address]);
     }
 }

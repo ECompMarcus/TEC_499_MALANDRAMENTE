@@ -8,7 +8,7 @@ public class ULA {
     public ULA() {
     }
 
-    public int ADD(int op1, int op2, int op) {
+    private int ADD(int op1, int op2, int op) {
         if (op == 0) {
             return op1 + op2;
         } else {
@@ -16,7 +16,7 @@ public class ULA {
         }
     }
 
-    public int AND(int op1, int op2, int op) {
+    private int AND(int op1, int op2, int op) {
         if (op == 0) {
             return op1 & op2;
         } else {
@@ -24,7 +24,7 @@ public class ULA {
         }
     }
 
-    public int OR(int op1, int op2, int op) {
+    private int OR(int op1, int op2, int op) {
         if (op == 0) {
             return op1 | op2;
         } else {
@@ -33,11 +33,11 @@ public class ULA {
 
     }
 
-    public int XOR(int op1, int op2) {
+    private int XOR(int op1, int op2) {
         return op1 ^ op2;
     }
 
-    public int CountZeroOrUns(int op1, int op) {
+    private int CountZeroOrUns(int op1, int op) {
         if (op == 0) {
             return 0;
         } else {
@@ -130,6 +130,10 @@ public class ULA {
 
         }
 
+    }
+
+    public int decoderULA(int function, int op1, int op2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

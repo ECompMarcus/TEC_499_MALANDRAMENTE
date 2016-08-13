@@ -32,47 +32,150 @@ public class UnitControl {
 
         while (pc < memory.getInstruNumber()) {
             String instruction = memory.getBinMemory(pc);
-            String opcode = instruction.substring(0, 6);
-            String op1 = instruction.substring(6, 11);
-            String op2 = instruction.substring(11, 16);
-            String op3 = instruction.substring(17, 22);
-            String deslocamento = instruction.substring(22, 27);
-            String function = instruction.substring(27, 32);
-            String bit_16_31 = instruction.substring(17, 32);
+            int opcode = Integer.parseInt(instruction.substring(0, 6));
+            int op1 = Integer.parseInt(instruction.substring(6, 11));
+            int op2 = Integer.parseInt(instruction.substring(11, 16));
+            int op3 = Integer.parseInt(instruction.substring(16, 21));
+            int deslocamento = Integer.parseInt(instruction.substring(21, 26));
+            int function = Integer.parseInt(instruction.substring(26, 32));
+            int bit_16_31 = Integer.parseInt(instruction.substring(16, 32));
+            int bit_11_31 = Integer.parseInt(instruction.substring(11, 32));
+            int bit_6_31 = Integer.parseInt(instruction.substring(6, 32));
 
             // R COM 3 OPERANDO
             // verificar demais instruções
-            if (opcode.equals("000000")) {
-                String result = ula.decoderULA(Integer.getInteger(function), op1, op2);
-                bankReg.setValeu(Integer.getInteger(op3), Integer.getInteger(result));
+            if (opcode == 0) {
+                int result = ula.decoderULA(function, op1, op2);
+                bankReg.setValeu(op3, result);
                 pc++;
 
-            } else if (opcode.equals("000100")) { //beq
-                boolean result = ula.decoderULA(Integer.getInteger(function), op1, op2);
-                if (result) {
-                    pc = Integer.parseInt(bit_16_31);
+            } else if (opcode == 0b000100) { //beq
+                int result = ula.decoderULA(function, op1, op2);
+                if (result == 1) {
+                    pc += bit_16_31;
                 } else {
                     pc++;
                 }
-            }else if (opcode.equals("000101")) {//bne
-                boolean result = ula.decoderULA(Integer.getInteger(function), op1, op2);
-                if (result) {
-                    pc = Integer.parseInt(bit_16_31);
+            } else if (opcode == 0b000101) {//bne
+                int result = ula.decoderULA(function, op1, op2);
+                if (result == 1) {
+                    pc += bit_16_31;
                 } else {
                     pc++;
                 }
-            }else if (opcode.equals("001000")) {//addi
-                String result = ula.decoderULA(Integer.getInteger(function), op2, bit_16_31);
+            } else if (opcode == 0b001000) {//addi
+                int result = ula.decoderULA(function, op2, bit_16_31);
                 bankReg.setValeu(op1, result);
                 pc++;
-            }else if (opcode.equals("001000")) {//addi
-                String result = ula.decoderULA(Integer.getInteger(function), op2, bit_16_31);
+            } else if (opcode == 0b001001) {//addiu
+                int result = ula.decoderULA(function, op2, bit_16_31);
                 bankReg.setValeu(op1, result);
                 pc++;
+            } else if (opcode == 0b001010) {//slti
+                int result = ula.decoderULA(function, op1, bit_16_31
+                );
+                bankReg.setValeu(op2, result);
+                pc++;
+            } else if (opcode == 0b001011) {//sltiu
+                int result = ula.decoderULA(function, op1, bit_16_31);
+                bankReg.setValeu(op2, result);
+                pc++;
+            } else if (opcode == 001100) {//andi
+                int result = ula.decoderULA(function, op1, bit_16_31);
+                bankReg.setValeu(op2, result);
+                pc++;
+            } else if (opcode == 0b001101) {//ori
+                int result = ula.decoderULA(function, op2, bit_16_31
+                );
+                bankReg.setValeu(op1, result);
+                pc++;
+            } else if (opcode == 001110) {//xori
+                int result = ula.decoderULA(function, op1, bit_16_31);
+                bankReg.setValeu(op2, result);
+                pc++;
+            } else if (opcode == 0b000001) {//bltz, compara com zero
+                int result = ula.decoderULA(function, op1, 0b0);
+                if (result == 1) {
+                    pc += bit_16_31;
+                } else {
+                    pc++;
+                }
+            } else if (opcode == 0b000111) {//bltz, compara com zero
+                int result = ula.decoderULA(function, op1, 0b0);
+                if (result == 1) {
+                    pc += bit_16_31;
+                } else {
+                    pc++;
+                }
+            } else if (opcode == 0b001111) {//xori
+                int result = ula.decoderULA(function, op2, bit_16_31
+                );
+                bankReg.setValeu(op2, result);
+                pc++;
+            } else if (opcode == 0b100000) {// lb
+                String result = memory.getBinMemory(op1 + bit_16_31); // multiplica ou soma
+                bankReg.setValeu(op2, Integer.parseInt(result));
+                pc++;
+            } else if (opcode == 0b100001) {// lh
+                String result = memory.getBinMemory(op1 + bit_16_31); // multiplica ou soma
+                bankReg.setValeu(op2, Integer.parseInt(result));
+                pc++;
+            } else if (opcode == 0b100011) {// lw
+                String result = memory.getBinMemory(op1 + bit_16_31); // multiplica ou soma
+                bankReg.setValeu(op2, Integer.parseInt(result));
+                pc++;
+            } else if (opcode == 0b100101) {// li
+                String result = memory.getBinMemory(bit_11_31); // como pegar os 32 bits?
+                bankReg.setValeu(op1, Integer.parseInt(result));
+                pc++;
+            } else if (opcode == 0b101000) {// sh
+                int retorno = bankReg.getRegistersValue(op2);
+                memory.writeMemory(bit_16_31 + op1, retorno); // escreve o byte da parte mais baixa do registrador dado para a posição da RAM                
+                pc++;
+            } else if (opcode == 0b101001) {// sb
+                int retorno = bankReg.getRegistersValue(op2);
+                memory.writeMemory(bit_16_31 + op1, retorno); // escreve o byte da parte mais baixa do registrador dado para a posição da RAM                
+                pc++;
+            } else if (opcode == 0b101011) {// sw
+                int retorno = bankReg.getRegistersValue(op2);
+                memory.writeMemory(bit_16_31 + op1, retorno); // escreve o byte da parte mais baixa do registrador dado para a posição da RAM                
+                pc++;
+            } else if (opcode == 0b000010) {// j                        
+                pc = bit_6_31;
+            } else if (opcode == 0b000011) {// jal                        
+                bankReg.setValeu(31, pc);
+                pc = bit_6_31;
+            } else if (opcode == 0b011111) {// ext   e ins                    
+
+                if (function == 0b000000) {
+                    //implementar
+                } else {
+                    //implementar
+                }
+                pc++;
+            } else if (opcode == 0b011100) {// mul                   
+                int retorno = ula.decoderULA(function, op1, op2);
+                bankReg.setValeu(op3, retorno);
+                pc++;
+            } else if (opcode == 0b011100) {// clz e clo                  
+
+                int retorno = ula.decoderULA(function, op1, op2);
+                bankReg.setValeu(op3, retorno);
+                pc++;
+            } else if (opcode == 0b011100) {// madd e msub                    
+
+                int retorno = ula.decoderULA(function, op1, op2);
+                bankReg.setValeu(op3, retorno);
+                pc++;
+            } else if (opcode == 0b011111) {// SEB    seh wsbh              
+
+                //Sign-Extend Byte
+            } else if (opcode == 0b011111) {// SEB    seh wsbh              
+
+                //Sign-Extend Byte
             }
-        }
 
-        // switch ()
+        }
     }
 
     private void carregaInstrucoes(String fileName) throws IOException {

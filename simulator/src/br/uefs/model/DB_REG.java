@@ -38,8 +38,8 @@ public class DB_REG {
         return -1;
     }
 
-    public String getRegistersValue(int i) {
-        return registers[i][1];
+    public int getRegistersValue(int i) {
+        return Integer.parseInt(registers[i][1]);
     }
 
     public int registerSize() {
