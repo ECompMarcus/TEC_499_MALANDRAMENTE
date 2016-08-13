@@ -13,11 +13,10 @@ import java.io.IOException;
  */
 public class UnitControl {
 
-    int pc = 0b0;
-    int quantidade_instrucoes = 0;
+    private int pc = 0b0;
     private final MEMORY memory;
-    private DB_REG bankReg;
-    private ULA ula;
+    private final DB_REG bankReg;
+    private final ULA ula;
 
     //possui instancia das demais classes
     public UnitControl() throws IOException {
@@ -25,22 +24,42 @@ public class UnitControl {
         memory = new MEMORY();
         ula = new ULA();
         bankReg = new DB_REG();
+        decode();
 
     }
 
     private void decode() {
 
         while (pc < memory.getInstruNumber()) {
+
             String instruction = memory.getBinMemory(pc);
-            int opcode = Integer.parseInt(instruction.substring(0, 6));
-            int op1 = Integer.parseInt(instruction.substring(6, 11));
-            int op2 = Integer.parseInt(instruction.substring(11, 16));
-            int op3 = Integer.parseInt(instruction.substring(16, 21));
-            int deslocamento = Integer.parseInt(instruction.substring(21, 26));
-            int function = Integer.parseInt(instruction.substring(26, 32));
-            int bit_16_31 = Integer.parseInt(instruction.substring(16, 32));
-            int bit_11_31 = Integer.parseInt(instruction.substring(11, 32));
-            int bit_6_31 = Integer.parseInt(instruction.substring(6, 32));
+
+            String opcodes = instruction.substring(0, 6);
+            int opcode = Integer.parseUnsignedInt(opcodes, 2);
+
+            String op1s = instruction.substring(6, 11);
+            int op1 = Integer.parseUnsignedInt(op1s, 2);
+
+            String op2s = instruction.substring(11, 16);
+            int op2 = Integer.parseUnsignedInt(op2s, 2);
+
+            String op3s = instruction.substring(16, 21);
+            int op3 = Integer.parseUnsignedInt(op3s, 2);
+
+            String deslocamentos = instruction.substring(21, 26);
+            int deslocamento = Integer.parseUnsignedInt(deslocamentos, 2);
+
+            String functions = instruction.substring(26, 32);
+            int function = Integer.parseUnsignedInt(functions, 2);
+
+            String bit_16_31s = instruction.substring(16, 32);
+            int bit_16_31 = Integer.parseUnsignedInt(bit_16_31s, 2);
+
+            String bit_11_31s = instruction.substring(11, 32);
+            int bit_11_31 = Integer.parseUnsignedInt(bit_11_31s, 2);
+
+            String bit_6_31s = instruction.substring(6, 32);
+            int bit_6_31 = Integer.parseUnsignedInt(bit_6_31s, 2);
 
             // R COM 3 OPERANDO
             // verificar demais instruções
@@ -80,7 +99,7 @@ public class UnitControl {
                 int result = ula.decoderULA(function, op1, bit_16_31);
                 bankReg.setValeu(op2, result);
                 pc++;
-            } else if (opcode == 001100) {//andi
+            } else if (opcode == 001100) {//andi VERIFICAR LOOP INFINITO
                 int result = ula.decoderULA(function, op1, bit_16_31);
                 bankReg.setValeu(op2, result);
                 pc++;
@@ -89,7 +108,7 @@ public class UnitControl {
                 );
                 bankReg.setValeu(op1, result);
                 pc++;
-            } else if (opcode == 001110) {//xori
+            } else if (opcode == 0b001110) {//xori
                 int result = ula.decoderULA(function, op1, bit_16_31);
                 bankReg.setValeu(op2, result);
                 pc++;
@@ -108,8 +127,7 @@ public class UnitControl {
                     pc++;
                 }
             } else if (opcode == 0b001111) {//xori
-                int result = ula.decoderULA(function, op2, bit_16_31
-                );
+                int result = ula.decoderULA(function, op1, bit_16_31);
                 bankReg.setValeu(op2, result);
                 pc++;
             } else if (opcode == 0b100000) {// lb

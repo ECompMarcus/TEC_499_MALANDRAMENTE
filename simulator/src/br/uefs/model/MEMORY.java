@@ -14,7 +14,8 @@ public class MEMORY {
     private Integer instruNumber = 0;
     static int internalMemorySize = 0;
 
-    public MEMORY() {
+    public MEMORY() throws IOException {
+        mountMemory("binario.txt");
     }
 
     public void mountMemory(String name) throws IOException {
@@ -66,7 +67,7 @@ public class MEMORY {
     public boolean writeMemory(int address, int value) {
 
         if (address >= instruNumber) {
-            internalMemory[address] = value;
+            internalMemory[address] = Integer.toString(value);
         } else {
             return false;
         }

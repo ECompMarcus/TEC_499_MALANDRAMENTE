@@ -15,6 +15,14 @@ public class ULA {
             return op1 + (op2 * -1);
         }
     }
+    
+    private int SUB(int op1, int op2, int op) {
+        if (op == 0) {
+            return op1 - op2;
+        } else {
+            return op1 + (op2 * -1);
+        }
+    }
 
     private int AND(int op1, int op2, int op) {
         if (op == 0) {
@@ -39,6 +47,7 @@ public class ULA {
 
     private int CountZeroOrUns(int op1, int op) {
         if (op == 0) {
+
             return 0;
         } else {
             return 1;
@@ -61,22 +70,23 @@ public class ULA {
         return 0;
     }
 
-    public void decoderULA(int code) {
+    public int decoderULA(int code, int op1, int op2) {
+
         // ACUMULADOR
         if (code == 0b010000 || code == 0b010010 || code == 0b010001 || code == 0b0100110) {
-
         } // ADDI,ADDIU,ADD,ADDU,MOVE
         else if (code == 0b001000 || code == 0b001001 || code == 0b100000 || code == 0b100001 || code == 0b001010) {
+            return ADD(op1, op2, code);
 
         } //SUB, SUBU
         else if (code == 0b100010 || code == 0b100011) {
-
+            return SUB(op1, op2, code);
         } // AND , ANDI
         else if (code == 0b100100 || code == 0b001100) {
-
+            return AND(op1, op2, code);
         } // OR , ORI
         else if (code == 0b100101 || code == 0b001100) {
-
+            return OR(op1, op2, code);
         } // NOR	
         else if (code == 0b100111) {
 
@@ -94,6 +104,10 @@ public class ULA {
 
         } // BEQ BNE
         else if (code == 0b000100 || code == 0b000101) {
+            if (op1 == op2) {
+                return 1;
+            }
+            return 0;
 
         } // SLL, SLLV
         else if (code == 0b000000 || code == 0b000100) {
@@ -129,11 +143,7 @@ public class ULA {
         else if (code == 0b100000) {
 
         }
-
-    }
-
-    public int decoderULA(int function, int op1, int op2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 0;
     }
 
 }
