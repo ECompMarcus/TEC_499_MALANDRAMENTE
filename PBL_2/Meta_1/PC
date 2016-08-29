@@ -1,1 +1,12 @@
-PC
+module reg_pc(input CLK, input RESET, input [31:0] next_pc, output [31:0] pc);
+
+always @(posedge CLK or posedge RESET)
+begin 
+	if(!RESET)
+		pc = 32'h00000000;
+	else
+		pc = next_pc;
+end
+
+endmodule
+	

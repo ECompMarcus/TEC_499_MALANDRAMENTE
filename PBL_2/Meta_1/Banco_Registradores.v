@@ -1,4 +1,3 @@
-
 module Banco_Registradores (
   uc_escrita,
   dado_p_escrita,
