@@ -1,0 +1,23 @@
+module tb_extensor;
+  
+  reg [15:0] in = 15;
+  wire [31:0] out;
+  reg clk;
+  extensor_sinal signal_ext(
+  .entrada(in),
+  .saida(out)
+  );
+  
+  initial begin
+    clk =0;
+    in = 16'b1111111111111110;
+  end
+ 
+always@(posedge clk)
+begin 
+  #100 clk= !clk;
+    in = 14;
+  
+end
+  
+endmodule

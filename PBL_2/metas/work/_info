@@ -1,0 +1,157 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0sp1\try_1
+vbanco
+Z1 INnRnDES40PC1ch?^BYX4j2
+Z2 VhD`2cj=C3[CF?Oz_FZGV?3
+Z3 dC:\altera\13.0sp1\pbl_2\metas
+Z4 w1472482680
+Z5 8C:/altera/13.0sp1/pbl_2/metas/banco.v
+Z6 FC:/altera/13.0sp1/pbl_2/metas/banco.v
+L0 1
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -reportprogress|300|-work|work|C:/altera/13.0sp1/pbl_2/metas/banco.v|
+Z9 o-work work -O0
+Z10 !s100 67FiZ;^J2]NS]e9X_]aGj3
+Z11 !s108 1472482716.191000
+Z12 !s107 C:/altera/13.0sp1/pbl_2/metas/banco.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vcontador_programa
+Z13 I5^NWz<Cd64Q4nTilYXiga2
+Z14 VU:0DGT`LO2L?hR=W@4N@a2
+R3
+Z15 w1472423732
+Z16 8C:/altera/13.0sp1/pbl_2/metas/contador_programa.v
+Z17 FC:/altera/13.0sp1/pbl_2/metas/contador_programa.v
+L0 1
+R7
+r1
+31
+Z18 !s90 -reportprogress|300|-work|work|C:/altera/13.0sp1/pbl_2/metas/contador_programa.v|
+R9
+Z19 !s100 Z;G9V>XShlhRimz5]fm@L0
+Z20 !s108 1472423775.357000
+Z21 !s107 C:/altera/13.0sp1/pbl_2/metas/contador_programa.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vextensor_sinal
+Z22 !s100 zIcjNP8_:c??LgbC<lBC<3
+Z23 Ik77IeG2GI7Nk73HSRNg^_2
+Z24 VIzOZL2zcAQYK874nXCTlo0
+R3
+Z25 w1472427394
+Z26 8C:/altera/13.0sp1/pbl_2/metas/extensor_sinal.v
+Z27 FC:/altera/13.0sp1/pbl_2/metas/extensor_sinal.v
+L0 1
+R7
+r1
+31
+Z28 !s90 -reportprogress|300|-work|work|C:/altera/13.0sp1/pbl_2/metas/extensor_sinal.v|
+R9
+Z29 !s108 1472429586.677000
+Z30 !s107 C:/altera/13.0sp1/pbl_2/metas/extensor_sinal.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vmemoria
+Z31 !s100 O@[ekmOY<UXkTdcW1d8Ff0
+Z32 I8zJ8TGbKTR=LNYOBPP`Hd1
+Z33 VG4ZHgKL`4ka1fn2Uz4KWF3
+R3
+Z34 w1472475536
+Z35 8C:/altera/13.0sp1/pbl_2/metas/memoria.v
+Z36 FC:/altera/13.0sp1/pbl_2/metas/memoria.v
+L0 1
+R7
+r1
+31
+Z37 !s90 -reportprogress|300|-work|work|C:/altera/13.0sp1/pbl_2/metas/memoria.v|
+R9
+Z38 !s108 1472476672.097000
+Z39 !s107 C:/altera/13.0sp1/pbl_2/metas/memoria.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vtb_banco
+!i10b 1
+!s100 4`A6bS2VcEdGNmWoAC9290
+IeQi3D<XDi>2<E;X?gPQ;b3
+Z40 VJn4L?B?@P3LdiBXWCf?jK1
+R3
+w1472483000
+Z41 8C:/altera/13.0sp1/pbl_2/metas/tb_banco.v
+Z42 FC:/altera/13.0sp1/pbl_2/metas/tb_banco.v
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1472483009.995000
+!s107 C:/altera/13.0sp1/pbl_2/metas/tb_banco.v|
+Z43 !s90 -reportprogress|300|-work|work|C:/altera/13.0sp1/pbl_2/metas/tb_banco.v|
+!s101 -O0
+R9
+vtb_cont_prog
+Z44 IZHGGQ:AB1hYX`<=Y:mY=e3
+Z45 VM=mN5KBDKV?iSHQFm@][Q2
+R3
+Z46 w1472423769
+Z47 8C:/altera/13.0sp1/pbl_2/metas/tb_cont_prog.v
+Z48 FC:/altera/13.0sp1/pbl_2/metas/tb_cont_prog.v
+L0 1
+R7
+r1
+31
+Z49 !s90 -reportprogress|300|-work|work|C:/altera/13.0sp1/pbl_2/metas/tb_cont_prog.v|
+R9
+Z50 !s100 02QCg@mBCTVb22hQ3B9Oj2
+Z51 !s108 1472423775.515000
+Z52 !s107 C:/altera/13.0sp1/pbl_2/metas/tb_cont_prog.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vtb_extensor
+Z53 I`K1@D;:CO9fRXTI1W`Lca1
+Z54 VY1HDE]aA3NL^@YQ<mn>jT1
+R3
+Z55 w1472429769
+Z56 8C:/altera/13.0sp1/pbl_2/metas/tb_extensor.v
+Z57 FC:/altera/13.0sp1/pbl_2/metas/tb_extensor.v
+L0 1
+R7
+r1
+31
+Z58 !s90 -reportprogress|300|-work|work|C:/altera/13.0sp1/pbl_2/metas/tb_extensor.v|
+R9
+Z59 !s100 bS`=8n=`PcJcagOGKW;Hh2
+Z60 !s108 1472429774.903000
+Z61 !s107 C:/altera/13.0sp1/pbl_2/metas/tb_extensor.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vtb_memoria
+Z62 !s100 fffgM7d9Z?dFb?f]`1V5=1
+Z63 I@]O`1hB@k?KgMXaCn0jSh2
+Z64 V@QPGzGg2aR<kIIFPM3NoG0
+R3
+Z65 w1472475904
+Z66 8C:/altera/13.0sp1/pbl_2/metas/tb_memoria.v
+Z67 FC:/altera/13.0sp1/pbl_2/metas/tb_memoria.v
+L0 1
+R7
+r1
+31
+Z68 !s90 -reportprogress|300|-work|work|C:/altera/13.0sp1/pbl_2/metas/tb_memoria.v|
+R9
+Z69 !s108 1472476673.079000
+Z70 !s107 C:/altera/13.0sp1/pbl_2/metas/tb_memoria.v|
+!i10b 1
+!s85 0
+!s101 -O0

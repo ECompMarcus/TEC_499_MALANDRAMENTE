@@ -1,0 +1,15 @@
+C:/altera/13.0sp1/pbl_2/metas/tb_cont_prog.v {1 {vlog -work work C:/altera/13.0sp1/pbl_2/metas/tb_cont_prog.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module tb_cont_prog
+
+Top level modules:
+	tb_cont_prog
+
+} {} {}} C:/altera/13.0sp1/pbl_2/metas/contador_programa.v {1 {vlog -work work C:/altera/13.0sp1/pbl_2/metas/contador_programa.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module contador_programa
+
+Top level modules:
+	contador_programa
+
+} {} {}}

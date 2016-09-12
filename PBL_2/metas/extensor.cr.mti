@@ -1,0 +1,15 @@
+C:/altera/13.0sp1/pbl_2/metas/tb_extensor.v {1 {vlog -work work C:/altera/13.0sp1/pbl_2/metas/tb_extensor.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module tb_extensor
+
+Top level modules:
+	tb_extensor
+
+} {} {}} C:/altera/13.0sp1/pbl_2/metas/extensor_sinal.v {1 {vlog -work work C:/altera/13.0sp1/pbl_2/metas/extensor_sinal.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module extensor_sinal
+
+Top level modules:
+	extensor_sinal
+
+} {} {}}

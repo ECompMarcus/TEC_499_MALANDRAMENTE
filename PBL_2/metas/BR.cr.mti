@@ -1,0 +1,15 @@
+C:/altera/13.0sp1/pbl_2/metas/tb_banco.v {1 {vlog -work work C:/altera/13.0sp1/pbl_2/metas/tb_banco.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module tb_banco
+
+Top level modules:
+	tb_banco
+
+} {} {}} C:/altera/13.0sp1/pbl_2/metas/banco.v {1 {vlog -work work C:/altera/13.0sp1/pbl_2/metas/banco.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module banco
+
+Top level modules:
+	banco
+
+} {} {}}
