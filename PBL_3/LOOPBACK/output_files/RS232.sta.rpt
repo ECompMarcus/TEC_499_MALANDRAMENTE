@@ -1,0 +1,680 @@
+TimeQuest Timing Analyzer report for RS232
+Sat Oct 01 23:16:29 2016
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'frquency_divider_by2:divide|clk3'
+ 12. Setup: 'frquency_divider_by2:divide|clk2'
+ 13. Setup: 'clk'
+ 14. Hold: 'clk'
+ 15. Hold: 'frquency_divider_by2:divide|clk2'
+ 16. Hold: 'frquency_divider_by2:divide|clk3'
+ 17. Minimum Pulse Width: 'clk'
+ 18. Minimum Pulse Width: 'frquency_divider_by2:divide|clk2'
+ 19. Minimum Pulse Width: 'frquency_divider_by2:divide|clk3'
+ 20. Setup Times
+ 21. Hold Times
+ 22. Clock to Output Times
+ 23. Minimum Clock to Output Times
+ 24. Setup Transfers
+ 25. Hold Transfers
+ 26. Report TCCS
+ 27. Report RSKM
+ 28. Unconstrained Paths
+ 29. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; RS232                                                             ;
+; Device Family      ; MAX II                                                            ;
+; Device Name        ; EPM240T100C5                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Slow Model                                                        ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                             ;
++----------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------+
+; Clock Name                       ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                              ;
++----------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------+
+; clk                              ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                              ;
+; frquency_divider_by2:divide|clk2 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { frquency_divider_by2:divide|clk2 } ;
+; frquency_divider_by2:divide|clk3 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { frquency_divider_by2:divide|clk3 } ;
++----------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Fmax Summary                                                           ;
++------------+-----------------+----------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                       ; Note ;
++------------+-----------------+----------------------------------+------+
+; 157.33 MHz ; 157.33 MHz      ; frquency_divider_by2:divide|clk3 ;      ;
++------------+-----------------+----------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------------------------------+
+; Setup Summary                                             ;
++----------------------------------+--------+---------------+
+; Clock                            ; Slack  ; End Point TNS ;
++----------------------------------+--------+---------------+
+; frquency_divider_by2:divide|clk3 ; -5.356 ; -270.347      ;
+; frquency_divider_by2:divide|clk2 ; 0.842  ; 0.000         ;
+; clk                              ; 2.497  ; 0.000         ;
++----------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------+
+; Hold Summary                                              ;
++----------------------------------+--------+---------------+
+; Clock                            ; Slack  ; End Point TNS ;
++----------------------------------+--------+---------------+
+; clk                              ; -2.551 ; -2.551        ;
+; frquency_divider_by2:divide|clk2 ; -0.896 ; -0.896        ;
+; frquency_divider_by2:divide|clk3 ; 1.388  ; 0.000         ;
++----------------------------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++-----------------------------------------------------------+
+; Minimum Pulse Width Summary                               ;
++----------------------------------+--------+---------------+
+; Clock                            ; Slack  ; End Point TNS ;
++----------------------------------+--------+---------------+
+; clk                              ; -2.289 ; -2.289        ;
+; frquency_divider_by2:divide|clk2 ; 0.234  ; 0.000         ;
+; frquency_divider_by2:divide|clk3 ; 0.234  ; 0.000         ;
++----------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'frquency_divider_by2:divide|clk3'                                                                                                                                                                                               ;
++--------+-----------------------------------------------------+-----------------------------------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                           ; To Node                                                   ; Launch Clock                     ; Latch Clock                      ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------------+-----------------------------------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; -5.356 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[1]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 6.023      ;
+; -5.356 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[2]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 6.023      ;
+; -5.356 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[3]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 6.023      ;
+; -5.356 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[4]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 6.023      ;
+; -5.356 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[5]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 6.023      ;
+; -5.356 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[6]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 6.023      ;
+; -5.356 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[7]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 6.023      ;
+; -5.356 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[8]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 6.023      ;
+; -5.284 ; async_receiver:receptor|OversamplingCnt[0]          ; async_receiver:receptor|RxD_state[1]                      ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.951      ;
+; -5.275 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|TxD_shift[6]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.942      ;
+; -5.275 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|TxD_shift[5]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.942      ;
+; -5.275 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|TxD_shift[4]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.942      ;
+; -5.275 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|TxD_shift[3]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.942      ;
+; -5.275 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|TxD_shift[2]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.942      ;
+; -5.275 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|TxD_shift[1]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.942      ;
+; -5.275 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|TxD_shift[0]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.942      ;
+; -5.220 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[9]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.887      ;
+; -5.220 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[10] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.887      ;
+; -5.220 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[11] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.887      ;
+; -5.220 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[12] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.887      ;
+; -5.220 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[13] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.887      ;
+; -5.220 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[14] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.887      ;
+; -5.220 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[15] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.887      ;
+; -5.220 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[16] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.887      ;
+; -5.200 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[1]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.867      ;
+; -5.200 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[2]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.867      ;
+; -5.200 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[3]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.867      ;
+; -5.200 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[4]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.867      ;
+; -5.200 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[5]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.867      ;
+; -5.200 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[6]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.867      ;
+; -5.200 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[7]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.867      ;
+; -5.200 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[8]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.867      ;
+; -5.135 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[16] ; async_receiver:receptor|RxD_state[1]                      ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.802      ;
+; -5.107 ; async_receiver:receptor|RxD_data_ready              ; async_transmitter:transmissor|TxD_shift[6]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.774      ;
+; -5.107 ; async_receiver:receptor|RxD_data_ready              ; async_transmitter:transmissor|TxD_shift[5]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.774      ;
+; -5.107 ; async_receiver:receptor|RxD_data_ready              ; async_transmitter:transmissor|TxD_shift[4]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.774      ;
+; -5.107 ; async_receiver:receptor|RxD_data_ready              ; async_transmitter:transmissor|TxD_shift[3]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.774      ;
+; -5.107 ; async_receiver:receptor|RxD_data_ready              ; async_transmitter:transmissor|TxD_shift[2]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.774      ;
+; -5.107 ; async_receiver:receptor|RxD_data_ready              ; async_transmitter:transmissor|TxD_shift[1]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.774      ;
+; -5.107 ; async_receiver:receptor|RxD_data_ready              ; async_transmitter:transmissor|TxD_shift[0]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.774      ;
+; -5.088 ; async_receiver:receptor|OversamplingCnt[0]          ; async_receiver:receptor|RxD_state[3]                      ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.755      ;
+; -5.074 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[1]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.741      ;
+; -5.074 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[2]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.741      ;
+; -5.074 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[3]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.741      ;
+; -5.074 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[4]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.741      ;
+; -5.074 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[5]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.741      ;
+; -5.074 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[6]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.741      ;
+; -5.074 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[7]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.741      ;
+; -5.074 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[8]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.741      ;
+; -5.064 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[9]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.731      ;
+; -5.064 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[10] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.731      ;
+; -5.064 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[11] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.731      ;
+; -5.064 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[12] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.731      ;
+; -5.064 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[13] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.731      ;
+; -5.064 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[14] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.731      ;
+; -5.064 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[15] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.731      ;
+; -5.064 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[16] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.731      ;
+; -5.056 ; async_receiver:receptor|RxD_state[2]                ; async_receiver:receptor|RxD_state[1]                      ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.723      ;
+; -5.054 ; async_receiver:receptor|OversamplingCnt[0]          ; async_receiver:receptor|RxD_state[0]                      ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.721      ;
+; -5.032 ; async_transmitter:transmissor|TxD_state[2]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[1]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.699      ;
+; -5.032 ; async_transmitter:transmissor|TxD_state[2]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[2]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.699      ;
+; -5.032 ; async_transmitter:transmissor|TxD_state[2]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[3]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.699      ;
+; -5.032 ; async_transmitter:transmissor|TxD_state[2]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[4]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.699      ;
+; -5.032 ; async_transmitter:transmissor|TxD_state[2]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[5]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.699      ;
+; -5.032 ; async_transmitter:transmissor|TxD_state[2]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[6]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.699      ;
+; -5.032 ; async_transmitter:transmissor|TxD_state[2]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[7]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.699      ;
+; -5.032 ; async_transmitter:transmissor|TxD_state[2]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[8]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.699      ;
+; -5.014 ; async_receiver:receptor|OversamplingCnt[2]          ; async_receiver:receptor|RxD_state[1]                      ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.681      ;
+; -4.946 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|TxD_shift[6]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.613      ;
+; -4.946 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|TxD_shift[5]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.613      ;
+; -4.946 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|TxD_shift[4]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.613      ;
+; -4.946 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|TxD_shift[3]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.613      ;
+; -4.946 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|TxD_shift[2]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.613      ;
+; -4.946 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|TxD_shift[1]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.613      ;
+; -4.946 ; async_transmitter:transmissor|TxD_state[3]          ; async_transmitter:transmissor|TxD_shift[0]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.613      ;
+; -4.939 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[16] ; async_receiver:receptor|RxD_state[3]                      ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.606      ;
+; -4.938 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[9]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.605      ;
+; -4.938 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[10] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.605      ;
+; -4.938 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[11] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.605      ;
+; -4.938 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[12] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.605      ;
+; -4.938 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[13] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.605      ;
+; -4.938 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[14] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.605      ;
+; -4.938 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[15] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.605      ;
+; -4.938 ; async_transmitter:transmissor|TxD_state[1]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[16] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.605      ;
+; -4.917 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|TxD_shift[6]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.584      ;
+; -4.917 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|TxD_shift[5]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.584      ;
+; -4.917 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|TxD_shift[4]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.584      ;
+; -4.917 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|TxD_shift[3]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.584      ;
+; -4.917 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|TxD_shift[2]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.584      ;
+; -4.917 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|TxD_shift[1]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.584      ;
+; -4.917 ; async_transmitter:transmissor|TxD_state[0]          ; async_transmitter:transmissor|TxD_shift[0]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.584      ;
+; -4.908 ; async_receiver:receptor|RxD_state[3]                ; async_receiver:receptor|RxD_state[1]                      ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.575      ;
+; -4.905 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[16] ; async_receiver:receptor|RxD_state[0]                      ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.572      ;
+; -4.896 ; async_transmitter:transmissor|TxD_state[2]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[9]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.563      ;
+; -4.896 ; async_transmitter:transmissor|TxD_state[2]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[10] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.563      ;
+; -4.896 ; async_transmitter:transmissor|TxD_state[2]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[11] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.563      ;
+; -4.896 ; async_transmitter:transmissor|TxD_state[2]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[12] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.563      ;
+; -4.896 ; async_transmitter:transmissor|TxD_state[2]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[13] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.563      ;
+; -4.896 ; async_transmitter:transmissor|TxD_state[2]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[14] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.563      ;
+; -4.896 ; async_transmitter:transmissor|TxD_state[2]          ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[15] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 1.000        ; 0.000      ; 5.563      ;
++--------+-----------------------------------------------------+-----------------------------------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'frquency_divider_by2:divide|clk2'                                                                                                                                                  ;
++-------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; Slack ; From Node                        ; To Node                          ; Launch Clock                     ; Latch Clock                      ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; 0.842 ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk2 ; 0.500        ; 2.160      ; 1.861      ;
+; 1.342 ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk2 ; 1.000        ; 2.160      ; 1.861      ;
++-------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                                                          ;
++-------+----------------------------------+----------------------------------+----------------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                        ; To Node                          ; Launch Clock                     ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------+----------------------------------+----------------------------------+-------------+--------------+------------+------------+
+; 2.497 ; frquency_divider_by2:divide|clk2 ; frquency_divider_by2:divide|clk2 ; frquency_divider_by2:divide|clk2 ; clk         ; 0.500        ; 3.815      ; 1.861      ;
+; 2.997 ; frquency_divider_by2:divide|clk2 ; frquency_divider_by2:divide|clk2 ; frquency_divider_by2:divide|clk2 ; clk         ; 1.000        ; 3.815      ; 1.861      ;
++-------+----------------------------------+----------------------------------+----------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                                            ;
++--------+----------------------------------+----------------------------------+----------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                        ; To Node                          ; Launch Clock                     ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------+----------------------------------+----------------------------------+-------------+--------------+------------+------------+
+; -2.551 ; frquency_divider_by2:divide|clk2 ; frquency_divider_by2:divide|clk2 ; frquency_divider_by2:divide|clk2 ; clk         ; 0.000        ; 3.815      ; 1.861      ;
+; -2.051 ; frquency_divider_by2:divide|clk2 ; frquency_divider_by2:divide|clk2 ; frquency_divider_by2:divide|clk2 ; clk         ; -0.500       ; 3.815      ; 1.861      ;
++--------+----------------------------------+----------------------------------+----------------------------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'frquency_divider_by2:divide|clk2'                                                                                                                                                    ;
++--------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; Slack  ; From Node                        ; To Node                          ; Launch Clock                     ; Latch Clock                      ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; -0.896 ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk2 ; 0.000        ; 2.160      ; 1.861      ;
+; -0.396 ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk2 ; -0.500       ; 2.160      ; 1.861      ;
++--------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'frquency_divider_by2:divide|clk3'                                                                                                                                                                                                     ;
++-------+-----------------------------------------------------------+-----------------------------------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; Slack ; From Node                                                 ; To Node                                                   ; Launch Clock                     ; Latch Clock                      ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------------------+-----------------------------------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; 1.388 ; async_receiver:receptor|RxD_data[4]                       ; async_receiver:receptor|RxD_data[3]                       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 1.609      ;
+; 1.406 ; async_receiver:receptor|RxD_sync[0]                       ; async_receiver:receptor|RxD_sync[1]                       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 1.627      ;
+; 1.408 ; async_receiver:receptor|RxD_data[5]                       ; async_receiver:receptor|RxD_data[4]                       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 1.629      ;
+; 1.411 ; async_receiver:receptor|RxD_data[3]                       ; async_receiver:receptor|RxD_data[2]                       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 1.632      ;
+; 1.653 ; async_receiver:receptor|RxD_data[2]                       ; async_receiver:receptor|RxD_data[1]                       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 1.874      ;
+; 1.656 ; async_receiver:receptor|RxD_data[6]                       ; async_receiver:receptor|RxD_data[5]                       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 1.877      ;
+; 1.667 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[4]        ; async_receiver:receptor|BaudTickGen:tickgen|Acc[4]        ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 1.888      ;
+; 1.703 ; async_receiver:receptor|Filter_cnt[1]                     ; async_receiver:receptor|Filter_cnt[1]                     ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 1.924      ;
+; 1.710 ; async_receiver:receptor|Filter_cnt[1]                     ; async_receiver:receptor|Filter_cnt[0]                     ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 1.931      ;
+; 1.713 ; async_receiver:receptor|Filter_cnt[1]                     ; async_receiver:receptor|RxD_bit                           ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 1.934      ;
+; 1.787 ; async_receiver:receptor|RxD_data[1]                       ; async_receiver:receptor|RxD_data[0]                       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.008      ;
+; 1.797 ; async_receiver:receptor|RxD_data[7]                       ; async_receiver:receptor|RxD_data[6]                       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.018      ;
+; 1.899 ; async_receiver:receptor|OversamplingCnt[1]                ; async_receiver:receptor|OversamplingCnt[1]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.120      ;
+; 1.925 ; async_transmitter:transmissor|TxD_shift[7]                ; async_transmitter:transmissor|TxD_shift[7]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.146      ;
+; 1.925 ; async_receiver:receptor|RxD_bit                           ; async_receiver:receptor|RxD_bit                           ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.146      ;
+; 1.937 ; async_receiver:receptor|OversamplingCnt[0]                ; async_receiver:receptor|OversamplingCnt[0]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.158      ;
+; 2.000 ; async_receiver:receptor|RxD_state[1]                      ; async_receiver:receptor|RxD_state[3]                      ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.221      ;
+; 2.017 ; async_receiver:receptor|RxD_state[1]                      ; async_receiver:receptor|RxD_state[2]                      ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.238      ;
+; 2.049 ; async_receiver:receptor|RxD_bit                           ; async_receiver:receptor|RxD_data[7]                       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.270      ;
+; 2.064 ; async_receiver:receptor|OversamplingCnt[0]                ; async_receiver:receptor|OversamplingCnt[2]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.285      ;
+; 2.107 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[9]  ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[9]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.328      ;
+; 2.107 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[10]       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[10]       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.328      ;
+; 2.108 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[6]  ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[6]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.329      ;
+; 2.108 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[7]        ; async_receiver:receptor|BaudTickGen:tickgen|Acc[7]        ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.329      ;
+; 2.117 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[1]  ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[1]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[8]  ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[8]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[10] ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[10] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[11]       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[11]       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[11] ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[11] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[12]       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[12]       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.338      ;
+; 2.119 ; async_transmitter:transmissor|TxD_shift[6]                ; async_transmitter:transmissor|TxD_shift[5]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.340      ;
+; 2.127 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[9]        ; async_receiver:receptor|BaudTickGen:tickgen|Acc[9]        ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.348      ;
+; 2.127 ; async_receiver:receptor|RxD_sync[1]                       ; async_receiver:receptor|Filter_cnt[0]                     ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.348      ;
+; 2.130 ; async_receiver:receptor|RxD_sync[1]                       ; async_receiver:receptor|Filter_cnt[1]                     ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.351      ;
+; 2.145 ; async_transmitter:transmissor|TxD_shift[7]                ; async_transmitter:transmissor|TxD_shift[6]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.366      ;
+; 2.192 ; async_receiver:receptor|RxD_state[2]                      ; async_receiver:receptor|RxD_state[2]                      ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.413      ;
+; 2.206 ; async_receiver:receptor|RxD_state[2]                      ; async_receiver:receptor|RxD_state[3]                      ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.427      ;
+; 2.212 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[8]        ; async_receiver:receptor|BaudTickGen:tickgen|Acc[8]        ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.433      ;
+; 2.212 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[12] ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[12] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.433      ;
+; 2.212 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[13]       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[13]       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.433      ;
+; 2.221 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[2]  ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[2]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[5]        ; async_receiver:receptor|BaudTickGen:tickgen|Acc[5]        ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[7]  ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[7]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[15]       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[15]       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.442      ;
+; 2.222 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[6]        ; async_receiver:receptor|BaudTickGen:tickgen|Acc[6]        ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.443      ;
+; 2.222 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[14]       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[14]       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.443      ;
+; 2.223 ; async_transmitter:transmissor|TxD_shift[2]                ; async_transmitter:transmissor|TxD_shift[1]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.444      ;
+; 2.226 ; async_transmitter:transmissor|TxD_shift[3]                ; async_transmitter:transmissor|TxD_shift[2]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.447      ;
+; 2.230 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[4]  ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[4]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[14] ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[14] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.451      ;
+; 2.231 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[3]  ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[3]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[5]  ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[5]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[13] ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[13] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; async_transmitter:transmissor|TxD_shift[5]                ; async_transmitter:transmissor|TxD_shift[4]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[15] ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[15] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.452      ;
+; 2.233 ; async_transmitter:transmissor|TxD_shift[4]                ; async_transmitter:transmissor|TxD_shift[3]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.454      ;
+; 2.233 ; async_transmitter:transmissor|TxD_shift[1]                ; async_transmitter:transmissor|TxD_shift[0]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.454      ;
+; 2.255 ; async_receiver:receptor|OversamplingCnt[0]                ; async_receiver:receptor|OversamplingCnt[1]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.476      ;
+; 2.285 ; async_receiver:receptor|Filter_cnt[0]                     ; async_receiver:receptor|Filter_cnt[0]                     ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.506      ;
+; 2.287 ; async_receiver:receptor|Filter_cnt[0]                     ; async_receiver:receptor|RxD_bit                           ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.508      ;
+; 2.289 ; async_receiver:receptor|Filter_cnt[0]                     ; async_receiver:receptor|Filter_cnt[1]                     ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.510      ;
+; 2.346 ; async_receiver:receptor|RxD_state[3]                      ; async_receiver:receptor|RxD_state[3]                      ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.567      ;
+; 2.347 ; async_receiver:receptor|RxD_state[3]                      ; async_receiver:receptor|RxD_state[1]                      ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.568      ;
+; 2.359 ; async_receiver:receptor|RxD_state[3]                      ; async_receiver:receptor|RxD_state[2]                      ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.580      ;
+; 2.499 ; async_receiver:receptor|OversamplingCnt[2]                ; async_receiver:receptor|OversamplingCnt[2]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.720      ;
+; 2.639 ; async_receiver:receptor|OversamplingCnt[1]                ; async_receiver:receptor|OversamplingCnt[2]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.860      ;
+; 2.716 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[16]       ; async_receiver:receptor|OversamplingCnt[2]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 2.937      ;
+; 2.827 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[16]       ; async_receiver:receptor|Filter_cnt[0]                     ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.048      ;
+; 2.830 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[16]       ; async_receiver:receptor|Filter_cnt[1]                     ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.051      ;
+; 2.831 ; async_receiver:receptor|RxD_data[0]                       ; async_transmitter:transmissor|TxD_shift[0]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.052      ;
+; 2.919 ; async_receiver:receptor|RxD_state[0]                      ; async_receiver:receptor|RxD_state[2]                      ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.140      ;
+; 2.939 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[9]  ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[10] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.160      ;
+; 2.939 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[10]       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[11]       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.160      ;
+; 2.940 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[6]  ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[7]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.161      ;
+; 2.940 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[7]        ; async_receiver:receptor|BaudTickGen:tickgen|Acc[8]        ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.161      ;
+; 2.949 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[1]  ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[2]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[10] ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[11] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[11]       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[12]       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[11] ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[12] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[12]       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[13]       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.170      ;
+; 3.042 ; async_receiver:receptor|RxD_bit                           ; async_receiver:receptor|RxD_state[0]                      ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.263      ;
+; 3.050 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[9]  ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[11] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.271      ;
+; 3.050 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[10]       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[12]       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.271      ;
+; 3.051 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[6]  ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[8]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.272      ;
+; 3.051 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[7]        ; async_receiver:receptor|BaudTickGen:tickgen|Acc[9]        ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.272      ;
+; 3.060 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[1]  ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[3]  ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[11] ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[13] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[12]       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[14]       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[10] ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[12] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[11]       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[13]       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.281      ;
+; 3.078 ; async_transmitter:transmissor|TxD_state[0]                ; async_transmitter:transmissor|TxD_state[0]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.299      ;
+; 3.083 ; async_transmitter:transmissor|TxD_state[1]                ; async_transmitter:transmissor|TxD_state[1]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.304      ;
+; 3.083 ; async_transmitter:transmissor|TxD_state[2]                ; async_transmitter:transmissor|TxD_state[2]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.304      ;
+; 3.088 ; async_transmitter:transmissor|TxD_state[1]                ; async_transmitter:transmissor|TxD_state[3]                ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.309      ;
+; 3.152 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[8]        ; async_receiver:receptor|BaudTickGen:tickgen|Acc[9]        ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.373      ;
+; 3.152 ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[12] ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[13] ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.373      ;
+; 3.152 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[13]       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[14]       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.373      ;
+; 3.158 ; async_receiver:receptor|RxD_state[1]                      ; async_receiver:receptor|RxD_state[1]                      ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.379      ;
+; 3.161 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[5]        ; async_receiver:receptor|BaudTickGen:tickgen|Acc[6]        ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161 ; async_receiver:receptor|BaudTickGen:tickgen|Acc[15]       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[16]       ; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 0.000        ; 0.000      ; 3.382      ;
++-------+-----------------------------------------------------------+-----------------------------------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'clk'                                                                                        ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                           ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; clk   ; Rise       ; clk                              ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; frquency_divider_by2:divide|clk2 ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; frquency_divider_by2:divide|clk2 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; divide|clk2|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; divide|clk2|clk                  ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'frquency_divider_by2:divide|clk2'                                                                                     ;
++-------+--------------+----------------+------------------+----------------------------------+------------+----------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                            ; Clock Edge ; Target                           ;
++-------+--------------+----------------+------------------+----------------------------------+------------+----------------------------------+
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk2 ; Rise       ; frquency_divider_by2:divide|clk3 ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk2 ; Rise       ; frquency_divider_by2:divide|clk3 ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; frquency_divider_by2:divide|clk2 ; Rise       ; divide|clk2|regout               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; frquency_divider_by2:divide|clk2 ; Rise       ; divide|clk2|regout               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; frquency_divider_by2:divide|clk2 ; Rise       ; divide|clk3|clk                  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; frquency_divider_by2:divide|clk2 ; Rise       ; divide|clk3|clk                  ;
++-------+--------------+----------------+------------------+----------------------------------+------------+----------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'frquency_divider_by2:divide|clk3'                                                                                                              ;
++-------+--------------+----------------+------------------+----------------------------------+------------+-----------------------------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                            ; Clock Edge ; Target                                                    ;
++-------+--------------+----------------+------------------+----------------------------------+------------+-----------------------------------------------------------+
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[10]       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[10]       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[11]       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[11]       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[12]       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[12]       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[13]       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[13]       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[14]       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[14]       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[15]       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[15]       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[16]       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[16]       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[4]        ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[4]        ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[5]        ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[5]        ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[6]        ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[6]        ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[7]        ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[7]        ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[8]        ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[8]        ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[9]        ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|BaudTickGen:tickgen|Acc[9]        ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|Filter_cnt[0]                     ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|Filter_cnt[0]                     ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|Filter_cnt[1]                     ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|Filter_cnt[1]                     ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|OversamplingCnt[0]                ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|OversamplingCnt[0]                ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|OversamplingCnt[1]                ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|OversamplingCnt[1]                ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|OversamplingCnt[2]                ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|OversamplingCnt[2]                ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_bit                           ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_bit                           ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_data[0]                       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_data[0]                       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_data[1]                       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_data[1]                       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_data[2]                       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_data[2]                       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_data[3]                       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_data[3]                       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_data[4]                       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_data[4]                       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_data[5]                       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_data[5]                       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_data[6]                       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_data[6]                       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_data[7]                       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_data[7]                       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_data_ready                    ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_data_ready                    ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_state[0]                      ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_state[0]                      ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_state[1]                      ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_state[1]                      ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_state[2]                      ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_state[2]                      ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_state[3]                      ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_state[3]                      ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_sync[0]                       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_sync[0]                       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_sync[1]                       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_receiver:receptor|RxD_sync[1]                       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[10] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[10] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[11] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[11] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[12] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[12] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[13] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[13] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[14] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[14] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[15] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[15] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[16] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[16] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[1]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[1]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[2]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[2]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[3]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[3]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[4]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[4]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[5]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[5]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[6]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[6]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[7]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[7]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[8]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[8]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[9]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; frquency_divider_by2:divide|clk3 ; Rise       ; async_transmitter:transmissor|BaudTickGen:tickgen|Acc[9]  ;
++-------+--------------+----------------+------------------+----------------------------------+------------+-----------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                  ;
++-----------+----------------------------------+-------+-------+------------+----------------------------------+
+; Data Port ; Clock Port                       ; Rise  ; Fall  ; Clock Edge ; Clock Reference                  ;
++-----------+----------------------------------+-------+-------+------------+----------------------------------+
+; rx        ; frquency_divider_by2:divide|clk3 ; 2.970 ; 2.970 ; Rise       ; frquency_divider_by2:divide|clk3 ;
++-----------+----------------------------------+-------+-------+------------+----------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                     ;
++-----------+----------------------------------+--------+--------+------------+----------------------------------+
+; Data Port ; Clock Port                       ; Rise   ; Fall   ; Clock Edge ; Clock Reference                  ;
++-----------+----------------------------------+--------+--------+------------+----------------------------------+
+; rx        ; frquency_divider_by2:divide|clk3 ; -2.416 ; -2.416 ; Rise       ; frquency_divider_by2:divide|clk3 ;
++-----------+----------------------------------+--------+--------+------------+----------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                          ;
++-----------+----------------------------------+--------+--------+------------+----------------------------------+
+; Data Port ; Clock Port                       ; Rise   ; Fall   ; Clock Edge ; Clock Reference                  ;
++-----------+----------------------------------+--------+--------+------------+----------------------------------+
+; tx        ; frquency_divider_by2:divide|clk3 ; 10.448 ; 10.448 ; Rise       ; frquency_divider_by2:divide|clk3 ;
++-----------+----------------------------------+--------+--------+------------+----------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                  ;
++-----------+----------------------------------+--------+--------+------------+----------------------------------+
+; Data Port ; Clock Port                       ; Rise   ; Fall   ; Clock Edge ; Clock Reference                  ;
++-----------+----------------------------------+--------+--------+------------+----------------------------------+
+; tx        ; frquency_divider_by2:divide|clk3 ; 10.048 ; 10.048 ; Rise       ; frquency_divider_by2:divide|clk3 ;
++-----------+----------------------------------+--------+--------+------------+----------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                 ;
++----------------------------------+----------------------------------+----------+----------+----------+----------+
+; From Clock                       ; To Clock                         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------+----------------------------------+----------+----------+----------+----------+
+; frquency_divider_by2:divide|clk2 ; clk                              ; 1        ; 1        ; 0        ; 0        ;
+; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk2 ; 1        ; 1        ; 0        ; 0        ;
+; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 719      ; 0        ; 0        ; 0        ;
++----------------------------------+----------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                  ;
++----------------------------------+----------------------------------+----------+----------+----------+----------+
+; From Clock                       ; To Clock                         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------+----------------------------------+----------+----------+----------+----------+
+; frquency_divider_by2:divide|clk2 ; clk                              ; 1        ; 1        ; 0        ; 0        ;
+; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk2 ; 1        ; 1        ; 0        ; 0        ;
+; frquency_divider_by2:divide|clk3 ; frquency_divider_by2:divide|clk3 ; 719      ; 0        ; 0        ; 0        ;
++----------------------------------+----------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 1     ; 1    ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 3     ; 3    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Oct 01 23:16:28 2016
+Info: Command: quartus_sta RS232 -c RS232
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'RS232.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name frquency_divider_by2:divide|clk3 frquency_divider_by2:divide|clk3
+    Info (332105): create_clock -period 1.000 -name frquency_divider_by2:divide|clk2 frquency_divider_by2:divide|clk2
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -5.356
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -5.356      -270.347 frquency_divider_by2:divide|clk3 
+    Info (332119):     0.842         0.000 frquency_divider_by2:divide|clk2 
+    Info (332119):     2.497         0.000 clk 
+Info (332146): Worst-case hold slack is -2.551
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.551        -2.551 clk 
+    Info (332119):    -0.896        -0.896 frquency_divider_by2:divide|clk2 
+    Info (332119):     1.388         0.000 frquency_divider_by2:divide|clk3 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.289        -2.289 clk 
+    Info (332119):     0.234         0.000 frquency_divider_by2:divide|clk2 
+    Info (332119):     0.234         0.000 frquency_divider_by2:divide|clk3 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 303 megabytes
+    Info: Processing ended: Sat Oct 01 23:16:29 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
